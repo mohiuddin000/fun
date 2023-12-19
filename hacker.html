@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+      }
+      .terminal {
+        background-color: black;
+        width: 100vw;
+        height: 100vh;
+        padding: 50px 30px;
+      }
+      .terminal h5 {
+        color: aquamarine;
+        padding-bottom: 30px;
+        font-weight: 400;
+        font-size: 15px;
+        /* //display: none; */
+
+        visibility: hidden;
+        display: flex;
+        gap: 3px;
+      }
+
+      .terminal h1 {
+        color: aquamarine;
+        display: none;
+      }
+      #frist {
+        display: none;
+      }
+
+      #second {
+        display: none;
+      }
+      #third {
+        display: none;
+      }
+      .done {
+        font-size: 15px;
+        padding-top: 2px;
+      }
+
+      #shocked {
+        font-size: 25px;
+        border: 1px solid red;
+        padding: 10px;
+        border-radius: 5px;
+        width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="terminal">
+      <h5 id="start">
+        Initializing Cyber Attack
+        <p id="frist">.</p>
+        <p id="second">.</p>
+        <p id="third">.</p>
+      </h5>
+      <h5 id="firstLine">
+        Accessing Sensitive Information
+        <p id="frist">.</p>
+        <p id="second">.</p>
+        <p id="third">.</p>
+      </h5>
+      <h5 id="secondLine">
+        Compromising Security Systems
+        <p id="frist">.</p>
+        <p id="second">.</p>
+        <p id="third">.</p>
+      </h5>
+      <h5 id="thirdLine">
+        Encrypting Personal Files
+        <p id="frist">.</p>
+        <p id="second">.</p>
+        <p id="third">.</p>
+      </h5>
+      <h5 id="end">
+        Demanding Ransom
+        <p id="frist">.</p>
+        <p id="second">.</p>
+        <p id="third">.</p>
+      </h5>
+      <h1 id="shocked">
+        You have been hacked by Mohi. Pay 500 rupees to prevent the leak of your
+        personal information.
+      </h1>
+    </div>
+    <script>
+      async function displayLines() {
+        let start = document.getElementById("start");
+        let firstLine = document.getElementById("firstLine");
+        let secondLine = document.getElementById("secondLine");
+        let thirdLine = document.getElementById("thirdLine");
+        let end = document.getElementById("end");
+        let shocked = document.getElementById("shocked");
+        async function dots(element) {
+          let Fdot = element.querySelector("#frist");
+          let sdot = element.querySelector("#second");
+          let tdot = element.querySelector("#third");
+          await sleep(600);
+          Fdot.style.display = "block";
+          await sleep(600);
+          sdot.style.display = "block";
+          await sleep(600);
+          tdot.style.display = "block";
+          await sleep(600);
+          Fdot.style.display = "none";
+          sdot.style.display = "none";
+          tdot.style.display = "none";
+
+          let doneSpan = document.createElement("span");
+          doneSpan.className = "material-symbols-outlined done";
+          doneSpan.textContent = "done";
+          element.appendChild(doneSpan);
+        }
+        await sleep(3000);
+        start.style.visibility = "visible";
+        await dots(start);
+
+        await sleep(3000);
+        firstLine.style.visibility = "visible";
+        await dots(firstLine);
+
+        await sleep(3000);
+        secondLine.style.visibility = "visible";
+        await dots(secondLine);
+
+        await sleep(3000);
+        thirdLine.style.visibility = "visible";
+        await dots(thirdLine);
+
+        await sleep(3000);
+        end.style.visibility = "visible";
+        await dots(end);
+
+        await sleep(1000);
+        shocked.style.display = "block";
+      }
+      function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+
+      displayLines();
+    </script>
+  </body>
+</html>
